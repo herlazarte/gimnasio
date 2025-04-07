@@ -1,8 +1,13 @@
-@extends('layouts.plantillabase');
+@extends('adminlte::page')
 
-@section('contenido')
+@section('title', 'Dashboard')
 
+@section('content_header')
+    <h1>Create</h1>
+@stop
 
+@section('content')
+    
 <div class="container">
     <form action="{{route('clientes.store')}}" method="POST">
         @csrf
@@ -29,5 +34,13 @@
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
 </div>
+@stop
 
-@endsection
+@section('css')
+    {{-- Add here extra stylesheets --}}
+    {{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}}
+@stop
+
+@section('js')
+    <script> console.log("Hi, I'm using the Laravel-AdminLTE package!"); </script>
+@stop

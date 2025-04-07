@@ -1,11 +1,12 @@
-@extends ('layouts.plantillabase');
+@extends('adminlte::page')
 
-@section('css')
-<link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.css">
-@endsection
+@section('title', 'Dashboard')
 
-@section('contenido')
+@section('content_header')
+    <h1>Dashboard</h1>
+@stop
 
+@section('content')
 <h1 class="my-4">Vista General Clientes</h1>
 
 <a href="clientes/create" class="btn btn-primary mb-3">Crear Cliente</a>
@@ -41,6 +42,15 @@
         @endforeach
     </tbody>
 </table>
+@stop
+
+@section('css')
+    {{-- Add here extra stylesheets --}}
+    {{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.css">
+@endsection
+
+
 
 @section('js')
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
@@ -51,7 +61,4 @@
     new DataTable('#clientes');
 </script>
 
-@endsection
-
-@endsection
-
+@stop
